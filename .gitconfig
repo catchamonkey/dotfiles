@@ -1,5 +1,5 @@
 [user]
-	name = Chris Sedlmayr
+    name = Chris Sedlmayr
     email = chris@sedlmayr.co.uk
 [color]
     ui = auto
@@ -17,21 +17,21 @@
     changed = green
     untracked = cyan
 [core]
-	editor = subl -w
+    editor = subl -w
     excludesfile = ~/.gitignore
 [alias]
-	pretty = log --oneline --graph
-	xpretty = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	diffw = diff --word-diff
-	logall = log --oneline --decorate
-	hist = log --decorate --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
-	count = shortlog -sn
-	st = status -sb
+    pretty = log --oneline --graph
+    xpretty = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    diffw = diff --word-diff
+    logall = log --oneline --decorate
+    hist = log --decorate --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    count = shortlog -sn
+    st = status -sb
 [help]
-	format = web
-	autocorrect = 1
+    format = web
+    autocorrect = 1
 [github]
-	user = catchamonkey
-	name = Chris Sedlmayr
+    user = catchamonkey
+    name = Chris Sedlmayr
