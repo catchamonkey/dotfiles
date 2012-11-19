@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Monokai</string>
+    <key>settings</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>Markup: Italic</string>
+            <key>scope</key>
+            <string>markup.italic</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <string>#E9C062</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Bold</string>
+            <key>scope</key>
+            <string>markup.bold</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>foreground</key>
+                <string>#449b14</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Underline</string>
+            <key>scope</key>
+            <string>markup.underline</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>underline</string>
+                <key>foreground</key>
+                <string>#E18964</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Quote</string>
+            <key>scope</key>
+            <string>markup.quote</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#FEE09C12</string>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <string>#E1D4B9</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Heading</string>
+            <key>scope</key>
+            <string>markup.heading, markup.heading entity</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#CF6A4C</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: List</string>
+            <key>scope</key>
+            <string>markup.list</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#CBDB7B</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Raw</string>
+            <key>scope</key>
+            <string>markup.raw</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#B1B3BA08</string>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#578BB3</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Comment</string>
+            <key>scope</key>
+            <string>markup comment</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <string>#F67B37</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Markup: Separator</string>
+            <key>scope</key>
+            <string>meta.separator</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#242424</string>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#60A633</string>
+            </dict>
+        </dict>
+    </array>
+    <key>uuid</key>
+    <string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
+</dict>
+</plist>
