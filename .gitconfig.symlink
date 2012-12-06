@@ -25,6 +25,8 @@
     diffw = diff --word-diff
     logall = log --oneline --decorate
     hist = log --decorate --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     type = cat-file -t
     dump = cat-file -p
     count = shortlog -sn
