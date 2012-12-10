@@ -1,1 +1,3 @@
-:syntax on
+set title
+set background=dark
+syntax on
