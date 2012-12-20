@@ -1,0 +1,29 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias go='git checkout '
+
+# Dir /sites/argument changer
+function app () {
+    cd /home/sites/$@;
+}
+
+#log aliases
+alias tailm='tail -f /var/log/messages'
+
+# git aliases
+alias git_push_current_branch='git push origin `git rev-parse --abbrev-ref HEAD`'
+alias git_remove_merged_branches='git branch --merged master | grep -v 'master$' | xargs git branch -d'
+alias gd='git diff'
+alias gs='git status'
+alias gl='git log'
+alias ga='git add --patch'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
