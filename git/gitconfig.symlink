@@ -17,7 +17,7 @@
     changed = green
     untracked = cyan
 [core]
-    editor = subl -w
+	editor = vim
     excludesfile = ~/.gitignore
 [alias]
     pretty = log --oneline --graph
@@ -27,6 +27,7 @@
     hist = log --decorate --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    changelog = log --reverse --no-merges --format="%s%n%b"
     type = cat-file -t
     dump = cat-file -p
     count = shortlog -sn
@@ -37,3 +38,5 @@
 [github]
     user = catchamonkey
     name = Chris Sedlmayr
+[http]
+    proxy = jfh-proxyout.jellyfish.local:8080
