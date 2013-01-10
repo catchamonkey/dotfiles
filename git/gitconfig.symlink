@@ -38,5 +38,3 @@
 [github]
     user = catchamonkey
     name = Chris Sedlmayr
-[http]
-    proxy = jfh-proxyout.jellyfish.local:8080
