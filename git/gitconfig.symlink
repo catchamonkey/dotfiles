@@ -41,3 +41,5 @@
 [github]
     user = catchamonkey
     name = Chris Sedlmayr
+[url "git@github.com:"]
+    insteadOf = gh:
