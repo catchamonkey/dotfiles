@@ -1,3 +1,5 @@
 set title
 set background=dark
 syntax on
+set nowrap
+au BufNewFile,BufRead *.twig setf smarty
