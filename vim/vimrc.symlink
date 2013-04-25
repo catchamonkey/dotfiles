@@ -3,3 +3,14 @@ set background=dark
 syntax on
 set nowrap
 au BufNewFile,BufRead *.twig setf smarty
+set autoindent
+set cindent
+
+set tabstop=4
+
+set shiftwidth=4
+
+set softtabstop=4
+set smarttab
+
+set expandtab
