@@ -2,15 +2,25 @@ set title
 set background=dark
 syntax on
 set nowrap
+
+" set twig files to highlight using smarty syntax highlighting
 au BufNewFile,BufRead *.twig setf smarty
+
 set autoindent
 set cindent
 
 set tabstop=4
-
 set shiftwidth=4
-
 set softtabstop=4
 set smarttab
-
 set expandtab
+
+set number
+
+" tab mappings
+map <C-t> :Texplore<CR>
+map <C-w> :tabclose<CR>
+map <C-Tab> :tabn<CR>
+map <C-S-Tab> :tabp<CR>
+map <C-n> :tabnew<CR>
+map <C-o> :Explore<CR>
