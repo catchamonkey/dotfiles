@@ -24,4 +24,3 @@ map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
 map <C-n> :tabnew<CR>
 map <C-o> :Explore<CR>
-
