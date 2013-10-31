@@ -28,10 +28,11 @@
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     changelog = log --reverse --no-merges --format="%Cgreen%s%n%Creset%b"
+    cl = log --merges --reverse --format="\\*\\ %h\\ %b"
     type = cat-file -t
     dump = cat-file -p
     count = shortlog -sn
-    st = status -sb
+    st = status -s
     assume   = update-index --assume-unchanged
     unassume = update-index --no-assume-unchanged
     assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
