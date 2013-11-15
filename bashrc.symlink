@@ -18,6 +18,7 @@ alias tailm='tail -f /var/log/messages'
 # git aliases
 alias git_push_current_branch='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias git_remove_merged_branches='git branch --merged master | grep -v 'master$' | xargs git branch -d'
+alias git_changelog_next='git cl `git describe --tags --abbrev=0`..master'
 alias gd='git diff'
 alias gs='git status'
 alias gl='git log'
