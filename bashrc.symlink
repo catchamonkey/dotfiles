@@ -15,9 +15,11 @@ function app () {
 #log aliases
 alias tailm='tail -f /var/log/messages'
 
+alias phplint='find . -name "*.php" -exec php -l {} \; | grep "Parse error"'
+
 # git aliases
 alias git_push_current_branch='git push origin `git rev-parse --abbrev-ref HEAD`'
-alias git_remove_merged_branches='git branch --merged master | grep -v 'master$' | xargs git branch -d'
+alias git_remove_merged_branches='git branch --merged master | grep -v 'master$' | xargs --no-run-if-empty git branch -d'
 alias git_changelog_next='git cl `git describe --tags --abbrev=0`..master'
 alias gd='git diff'
 alias gs='git status'

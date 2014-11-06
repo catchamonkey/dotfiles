@@ -29,6 +29,8 @@
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     changelog = log --reverse --no-merges --format="%Cgreen%s%n%Creset%b"
     cl = log --merges --reverse --format="\\*\\ %Cgreen%h%Creset\\ %b"
+    #changelog md
+    clmd = log --merges --reverse --format="\\*\\ %h\\ %b"
     lt = describe --tags --abbrev=0
     type = cat-file -t
     dump = cat-file -p
@@ -47,3 +49,6 @@
 	insteadOf = gh:
 [url "git@github.com:catchamonkey/"]
     insteadOf = ghc:
+[pager]
+	diff = true
+	cl = false
