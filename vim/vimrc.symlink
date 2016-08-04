@@ -15,6 +15,7 @@ set shiftwidth=4
 set softtabstop=4
 set smarttab
 set expandtab
+set autochdir
 
 set number
 
@@ -32,10 +33,16 @@ noremap Q <nop>
 
 " Autoload NERDTree
 autocmd vimenter * :NERDTreeToggle
-
 if argc() > 0
-    " Move the focus to the right window if we're editing a file
-    autocmd VimEnter * wincmd l
+    if isdirectory(argv(0))
+        bd
+        autocmd VimEnter * wincmd h
+        let cd_cmd = "cd " . argv(0)
+        execute cd_cmd
+    else
+        " Move the focus to the right window if we're editing a file/dir
+        autocmd VimEnter * wincmd l
+    endif
 endif
 
 let g:go_fmt_command = "goimports"
