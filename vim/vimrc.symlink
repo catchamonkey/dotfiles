@@ -1,6 +1,7 @@
 set title
 set background=dark
 syntax on
+colorscheme monokai
 set nowrap
 
 " set twig files to highlight using smarty syntax highlighting
