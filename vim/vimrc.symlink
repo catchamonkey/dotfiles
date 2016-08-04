@@ -28,8 +28,16 @@ map <C-S-Tab> :tabp<CR>
 map <C-o> :Explore<CR>
 map <C-n> :NERDTree<CR>
 
+" If you want to open it only if you're opening Vim with a supported file/files
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
+" For opening Tagbar also if you open a supported file in an already running
+"autocmd FileType * nested :call tagbar#autoopen(0)
+
+
+
 " Disable Ex-mode
 noremap Q <nop>
+
 
 " Autoload NERDTree
 autocmd vimenter * :NERDTreeToggle
