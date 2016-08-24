@@ -19,6 +19,19 @@ set autochdir
 
 set number
 
+" set leader key
+let mapleader=","
+
+" define the path to the php-cs-fixer.phar
+let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer.phar"
+
+" set it up to run on saving of a PHP file
+function RunVimPhpCsFixer()
+    call PhpCsFixerFixFile()
+    set syntax=php " need this as for some reason syntax highlighting is broken after saving
+endfunction
+autocmd BufWritePost *.php silent call RunVimPhpCsFixer()
+
 " tab mappings
 map <C-t> :Texplore<CR>
 " map <C-w> :tabclose<CR>
@@ -64,6 +77,10 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 Plug 'fatih/vim-go'
+
+Plug 'tpope/vim-surround'
+
+Plug 'stephpy/vim-php-cs-fixer'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
