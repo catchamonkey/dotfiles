@@ -4,6 +4,20 @@ syntax on
 colorscheme monokai
 set nowrap
 
+let g:go_highlight_functions = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" go test alternate switches
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+au FileType go nmap <leader>b <Plug>(go-build)
+
 " set twig files to highlight using smarty syntax highlighting
 au BufNewFile,BufRead *.twig setf smarty
 
