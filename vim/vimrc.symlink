@@ -66,6 +66,10 @@ map = <C-w>>
 " auto close nerdtree if it's the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" NERDTree settings
+" https://github.com/scrooloose/nerdtree/pull/546
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 ""
 "" Backup and swap files
