@@ -38,6 +38,7 @@ let mapleader=","
 
 " define the path to the php-cs-fixer.phar
 let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer.phar"
+let g:php_cs_fixer_fixers_list = "-visibility,-unalign_double_arrow,-unalign_equals,align_double_arrow,align_equals"
 
 " set it up to run on saving of a PHP file
 function RunVimPhpCsFixer()
