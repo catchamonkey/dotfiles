@@ -10,6 +10,8 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+let g:mustache_abbreviations = 1
+
 " go test alternate switches
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
@@ -32,6 +34,8 @@ set expandtab
 set autochdir
 
 set number
+
+autocmd bufenter *.handlebars,*.hbs,*.scss setlocal ts=2 sts=2 sw=2
 
 " set leader key
 let mapleader=","
@@ -109,6 +113,8 @@ Plug 'stephpy/vim-php-cs-fixer'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
+
+Plug 'mustache/vim-mustache-handlebars'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
