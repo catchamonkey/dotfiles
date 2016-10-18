@@ -35,7 +35,10 @@ set autochdir
 
 set number
 
-autocmd bufenter *.handlebars,*.hbs,*.scss setlocal ts=2 sts=2 sw=2
+autocmd bufenter *.handlebars,*.hbs,*.scss,*.js setlocal ts=2 sts=2 sw=2
+
+" change the default wait time before running any updates (git gutter e.g.)
+set updatetime=250
 
 " set leader key
 let mapleader=","
@@ -136,6 +139,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug '~/my-prototype-plugin'
 
 Plug 'majutsushi/tagbar'
+
+Plug 'airblade/vim-gitgutter'
 
 " Add plugins to &runtimepath
 call plug#end()
