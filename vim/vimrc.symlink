@@ -109,38 +109,22 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 Plug 'fatih/vim-go'
-
 Plug 'tpope/vim-surround'
-
 Plug 'stephpy/vim-php-cs-fixer'
-
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-
 Plug 'mustache/vim-mustache-handlebars'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'tag': '*' }
-
 " Plugin options
 Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
 Plug 'majutsushi/tagbar'
-
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
