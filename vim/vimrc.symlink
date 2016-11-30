@@ -40,6 +40,8 @@ autocmd bufenter *.handlebars,*.hbs,*.scss,*.js setlocal ts=2 sts=2 sw=2
 " change the default wait time before running any updates (git gutter e.g.)
 set updatetime=250
 
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 " set leader key
 let mapleader=","
 
@@ -54,17 +56,17 @@ function RunVimPhpCsFixer()
 endfunction
 autocmd BufWritePost *.php silent call RunVimPhpCsFixer()
 
-" tab mappings
-map <C-t> :Texplore<CR>
 " map <C-w> :tabclose<CR>
 map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
 " map <C-n> :tabnew<CR>
 map <C-o> :Explore<CR>
-map <C-n> :NERDTree<CR>
 " window resizing
 map - <C-w><
 map = <C-w>>
+
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " If you want to open it only if you're opening Vim with a supported file/files
 "autocmd VimEnter * nested :call tagbar#autoopen(1)
@@ -125,6 +127,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'itchyny/lightline.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
