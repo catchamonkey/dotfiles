@@ -1,16 +1,23 @@
 set title
 set background=dark
 syntax on
-colorscheme monokai
+"colorscheme monokai
 set nowrap
+set autowrite
+"set mouse=a
 
 let g:go_highlight_functions = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_auto_type_info = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
 
 let g:mustache_abbreviations = 1
+
+let NERDTreeShowHidden = 1
 
 " go test alternate switches
 autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
@@ -19,9 +26,17 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>d <Plug>(go-doc)
 
 " set twig files to highlight using smarty syntax highlighting
 au BufNewFile,BufRead *.twig setf smarty
+" set max width of MD lines to 80
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+highlight GitGutterAdd    guifg=#669900 ctermfg=46 
+highlight GitGutterChange guifg=#bbbb00 ctermfg=226
+highlight GitGutterDelete guifg=#ff2222 ctermfg=196
+highlight! link SignColumn LineNr
 
 set autoindent
 set cindent
@@ -35,6 +50,8 @@ set autochdir
 
 set number
 
+set wrap linebreak nolist
+
 autocmd bufenter *.handlebars,*.hbs,*.scss,*.js setlocal ts=2 sts=2 sw=2
 
 " change the default wait time before running any updates (git gutter e.g.)
@@ -44,17 +61,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " set leader key
 let mapleader=","
-
-" define the path to the php-cs-fixer.phar
-let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer.phar"
-let g:php_cs_fixer_fixers_list = "-visibility,-unalign_double_arrow,-unalign_equals,align_double_arrow,align_equals"
-
-" set it up to run on saving of a PHP file
-function RunVimPhpCsFixer()
-    call PhpCsFixerFixFile()
-    set syntax=php " need this as for some reason syntax highlighting is broken after saving
-endfunction
-autocmd BufWritePost *.php silent call RunVimPhpCsFixer()
 
 " map <C-w> :tabclose<CR>
 map <C-Tab> :tabn<CR>
@@ -66,7 +72,7 @@ map - <C-w><
 map = <C-w>>
 
 nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>t :TagbarToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 
 " If you want to open it only if you're opening Vim with a supported file/files
 "autocmd VimEnter * nested :call tagbar#autoopen(1)
@@ -84,11 +90,13 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 "" Backup and swap files
 ""
 set backupdir=~/.vim/_backup//    " where to put backup files.
-set directory=~/.vim/_temp//      " where to put swap files.
+set directory=~/.vim/_temp//      " where to put swap files. 
 
 " Disable Ex-mode
 noremap Q <nop>
 
+" save current file
+noremap <leader>w :update<CR>
 
 " Autoload NERDTree
 autocmd vimenter * :NERDTreeToggle
@@ -110,25 +118,35 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
-Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'stephpy/vim-php-cs-fixer'
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 Plug 'mustache/vim-mustache-handlebars'
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'itchyny/lightline.vim'
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'morhetz/gruvbox'
+
+Plug 'gyim/vim-boxdraw'
+
+Plug 'uarun/vim-protobuf'
+
 " Add plugins to &runtimepath
 call plug#end()
+
+colorscheme gruvbox
