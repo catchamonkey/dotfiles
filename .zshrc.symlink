@@ -1,0 +1,26 @@
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+#log aliases
+alias tailm='tail -f /var/log/messages'
+
+alias phplint='find . -name "*.php" -exec php -l {} \; | grep "Parse error"'
+
+# git aliases
+alias git_push_current_branch='git push origin `git rev-parse --abbrev-ref HEAD`'
+alias git_remove_merged_branches='git branch --merged main | grep -v 'main$' | xargs --no-run-if-empty git branch -d'
+alias git_changelog_next='git cl `git describe --tags --abbrev=0`..main'
+alias gd='git diff'
+alias gs='git status'
+alias gl='git log'
+alias ga='git add --patch'
+
+
+# Sentry CLI config
+export SENTRY_AUTH_TOKEN="$(security find-generic-password -a "$USER" -s sentry-cli-auth-token -w 2>/dev/null)"
+export SENTRY_URL=https://de.sentry.io/
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
